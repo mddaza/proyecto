@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Responsive</title>
+    <style>
+        /* CSS */
+        /* 1. Regla de oro para imágenes en móviles */
+         .imagen-fluida {
+          max-width: 100%;
+          height: auto;
+        }
+        /* 2. Estilos normales (para pantallas grandes) */
+        .contenedor {
+           width: 80%;
+           margin: 0 auto; /* Centra el contenedor */
+        } 
+        /* 3. Media Query: SOLO se activa si la pantalla mide menos de 600px (celulares) */
+        @media (max-width: 600px) {
+          .contenedor {
+          width: 100%; /* Ahora ocupa todo el ancho, sin márgenes laterales */
+        }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="contenedor">
+        <img class="imagen-fluida" src="../images/robot.png" alt="Prototipo de robot">
+    </div>
+</body>
+</html>
