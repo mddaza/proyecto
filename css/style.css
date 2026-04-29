@@ -1,68 +1,109 @@
 
 
-/*style.css */
+/*style.css - Tema coherente con tribute.html */
+
+:root {
+    --electric-blue: #00f2ff;
+    --neon-pink: #ff00ff;
+    --deep-space: #010103;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #1a1a2e;
+    color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin-top: 60px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, rgba(0, 242, 255, 0.1) 0%, rgba(255, 0, 255, 0.05) 100%);
+    border-bottom: 2px solid var(--electric-blue);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
 
 h1 {
-    color: rgb(255, 132, 0);
-    font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-body{
-background-color: #9bcccfbd;
-padding: 20px;
-
+    font-family: 'Orbitron', sans-serif;
+    color: var(--electric-blue);
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px var(--electric-blue);
+    margin-bottom: 10px;
 }
 
-/* Selector de etiqueta: Pinta el fondo de TODO el <main> */
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--neon-pink);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* Main content */
 main {
-background-color: #5cc9d3;
-padding: 20px;
+    background-color: rgba(26, 26, 46, 0.8);
+    padding: 30px 20px;
+    min-height: calc(100vh - 250px);
 }
 
-p{
-background-color: #ffea00;
-padding: 20px;
+p {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-left: 3px solid var(--electric-blue);
+    border-radius: 5px;
+    margin: 15px 0;
+    line-height: 1.6;
 }
 
 /* Selector de clase: Solo afecta al párrafo con class="texto-destacado" */
 .texto-destacado {
-color: #ff5722;
-font-weight: bold;
+    color: var(--neon-pink);
+    font-weight: bold;
 }
 
-/* Selector de ID: Solo afecta a la barra de navegación con id="menu-principal" */
+/* Selector de ID: Menú principal en barra superior */
 #menu-principal {
-background-color: #dcbdfb;
-padding: 10px;
+    background: linear-gradient(90deg, rgba(0, 242, 255, 0.1) 0%, rgba(255, 0, 255, 0.05) 100%);
+    border-bottom: 2px solid var(--electric-blue);
+    padding: 15px 20px;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 50;
+    transition: transform 0.3s ease;
 }
 
 #destacado {
-background-color: #c5ecf3;
-padding: 20px;
+    background: linear-gradient(135deg, rgba(0, 242, 255, 0.1) 0%, rgba(255, 0, 255, 0.05) 100%);
+    padding: 20px;
+    border-left: 3px solid var(--neon-pink);
+    border-radius: 5px;
 }
-/*TIPOGRAFIA*/
 
+/*TIPOGRAFIA*/
 .titulo-destacado {
-    font-family: 'Helvetica', sans-serif;
-    /* Fuente sin remates, muy moderna */
+    font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
-    /* Tamaño relativo */
-    text-shadow: 2px 2px 4px rgba(16, 1, 1, 0.888);
-    /* Sombra sutil */
+    color: var(--electric-blue);
+    text-shadow: 0 0 10px var(--electric-blue);
 }
 
 /*EJEMPLO MODELO CAJA*/
 .tarjeta-proyecto {
-    background-color: white;
-
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
-    /* Espacio interior para que el texto respire */
     margin: 15px;
-    /* Separación con otras tarjetas */
     border-radius: 12px;
-    /* Esquinas redondeadas suaves */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /*Efecto de tarjeta flotante*/
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
 }
 
 /* Dropdown menu styles */
@@ -70,6 +111,14 @@ padding: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#menu-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #menu-principal li {
@@ -77,24 +126,58 @@ padding: 20px;
     position: relative;
 }
 
-#menu-principal a {
+#menu-principal > ul > li > a {
     display: block;
-    padding: 10px 15px;
+    padding: 12px 20px;
     text-decoration: none;
-    color: #000;
+    color: var(--electric-blue);
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+#menu-principal .dropdown > a::after {
+    content: '▼';
+    margin-left: 8px;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+#menu-principal .dropdown:hover > a::after {
+    transform: translateY(2px);
+}
+
+#menu-principal > ul > li > a:hover {
+    color: var(--neon-pink);
+    border-bottom: 2px solid var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(15px);
+    border: 2px solid var(--electric-blue);
+    min-width: 350px;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+    z-index: 100;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: none;
+}
+
+.dropdown.active .dropdown-content {
+    display: block !important;
+    animation: dropdownSlide 0.3s ease-out;
+}
+
+@keyframes dropdownSlide {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .dropdown-content li {
@@ -102,12 +185,91 @@ padding: 20px;
 }
 
 .dropdown-content a {
-    padding: 12px 16px;
+    padding: 14px 20px;
     text-decoration: none;
     display: block;
-    color: #000;
+    color: var(--electric-blue);
+    transition: 0.3s;
+    border-left: 3px solid transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: rgba(0, 242, 255, 0.15);
+    color: var(--neon-pink);
+    border-left: 3px solid var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* Estilos para items de información en dropdowns */
+.info-item {
+    display: block !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    border-bottom: 2px solid var(--electric-blue);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+.info-item p {
+    background-color: transparent;
+    color: #f0f0f0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.info-item p strong {
+    color: var(--neon-pink);
+    font-weight: 600;
+    text-shadow: 0 0 8px var(--neon-pink);
+}
+
+.info-item h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    margin: 0 0 12px 0;
+    padding: 0;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, rgba(0, 242, 255, 0.1) 0%, rgba(255, 0, 255, 0.05) 100%);
+    border-top: 2px solid var(--electric-blue);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+/* Enlace "ir al final" en el menú */
+.footer-link {
+    display: inline-block;
+    margin-left: auto;
+    padding: 12px 20px;
+    color: var(--neon-pink);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.footer-link:hover {
+    color: var(--electric-blue);
+    border-color: var(--electric-blue);
+    text-shadow: 0 0 10px var(--electric-blue);
+}
+
+/* Aside */
+aside {
+    background-color: rgba(26, 26, 46, 0.8);
+    padding: 30px 20px;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    border-radius: 5px;
+    margin: 20px;
 }
