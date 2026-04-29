@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión Artemis II: Tu Próxima Frontera</title>
+    <link rel="stylesheet" href="/css/tributo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+  .fondo-completo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/luna.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1; /* Se va al fondo de todo */
+  }
+</style>
+
+<body>
+  <div class="fondo-completo"></div>
+  </body>
+
+<header class="main-header">
+        <h1 class="glow-title">MISIÓN ARTEMIS II</h1>
+        
+        <nav class="action-control-panel">
+            <button class="nav-btn" onclick="openInfoPanel(event, 'crew')">👨‍🚀 ASTRONAUTAS</button>
+            <button class="nav-btn" onclick="openInfoPanel(event, 'finds')">💎 HALLAZGOS</button>
+            <button class="nav-btn" onclick="openInfoPanel(event, 'rocket')">🚀 EL COHETE</button>
+        </nav>
+    </header>
+
+    <main id="info-display-window" class="command-center-window">
+        
+        <button class="close-window-btn" onclick="closeInfoPanel()">×</button>
+
+        <div id="crew" class="info-tab-content">
+            <div class="tab-grid">
+                <div class="text-side">
+                    <h2>Los Héroes Modernos</h2>
+                    <p>La NASA ha seleccionado a Reid Wiseman, Victor Glover, Christina Koch y Jeremy Hansen. Ellos serán los primeros humanos en volar cerca de la Luna en más de 50 años.</p>
+                    <small>Fuente: NASA Official Portraits</small>
+                </div>
+                <div class="image-side">
+                    <img src="/images/La-Nasa-y-la-CSA-presentaron-a-los-cuatro-tripulantes-de-la-mision-lunar-Artemisa-II-040423-1140x570.jpg" alt="Tripulación Artemis II">
+                </div>
+            </div>
+        </div>
+
+        <div id="finds" class="info-tab-content">
+            <div class="tab-grid">
+                <div class="text-side">
+                    <h2>Hielo en Cráteres Eternos</h2>
+                    <p>El objetivo es confirmar y mapear el hielo de agua detectado en el Polo Sur Lunar. Este hielo es crucial para fabricar combustible y aire.</p>
+                    <small>Fuente: NASA Lunar Science Illustration</small>
+                </div>
+                <div class="image-side">
+                    <img src="/images/images.jpg" alt="Hielo Lunar">
+                </div>
+            </div>
+        </div>
+
+        <div id="rocket" class="info-tab-content">
+            <div class="tab-grid">
+                <div class="text-side">
+                    <h2>El Megacohete SLS</h2>
+                    <p>El Space Launch System (SLS) es la pieza de ingeniería más potente jamás construida por la NASA, diseñada para enviar la cápsula Orion a la Luna.</p>
+                    <small>Fuente: NASA SLS Launch Photo</small>
+                </div>
+                <div class="image-side">
+                    <img src="/images/images (1).jpg" alt="Lanzamiento SLS">
+                </div>
+            </div>
+        </div>
+
+        <div id="mission" class="info-tab-content">
+            <div class="tab-grid">
+                <div class="text-side">
+                    <h2>Puntos Clave de la Misión</h2>
+                    <p>La misión probará los sistemas de soporte vital de la cápsula Orion en el espacio profundo y establecerá las bases para un futuro alunizaje sostenible.</p>
+                    <small>Fuente: NASA Orion Earth and Moon View</small>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="/js/Script.js"></script>
+</body>
+</html>

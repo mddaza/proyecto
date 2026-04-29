@@ -1,0 +1,170 @@
+:root {
+    --electric-blue: #00f2ff;
+    --neon-pink: #ff00ff;
+    --deep-space: #010103;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--deep-space);
+    color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden; /* Evitar scroll en la pantalla principal */
+}
+
+/* VIDEO DE FONDO Y OVERLAY */
+.video-background-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+#artemis-bg-video {
+    width: 100%; height: 100%;
+    object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: -1;
+}
+
+/* CABECERA Y TÍTULO */
+.main-header {
+    text-align: center;
+    padding: 60px 20px;
+    height: 100vh; /* Ocupa toda la pantalla inicialmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    color: white;
+    text-shadow: 0 0 20px var(--electric-blue);
+    margin-bottom: 40px;
+}
+
+/* MENÚ NAVEGACIÓN */
+.action-control-panel {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background-color: rgba(23, 1, 1, 0.5);
+    border: 2px solid var(--electric-blue);
+    color: var(--electric-blue);
+    padding: 12px 26px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.4s;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background: var(--electric-blue);
+    color: #000;
+    box-shadow: 0 0 30px var(--electric-blue);
+}
+
+/* VENTANA DE MANDO (OCULTA POR DEFECTO) */
+.command-center-window {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; max-width: 1100px;
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    z-index: 100;
+    display: none; /* OCULTO */
+    animation: windowSlideIn 0.5s ease-out;
+}
+
+@keyframes windowSlideIn {
+    from { opacity: 0; transform: translate(-50%, -40%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Botón de cerrar ventana */
+.close-window-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    background: none; border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-window-btn:hover { color: var(--neon-pink); }
+
+/* Pestañas de contenido */
+.info-tab-content {
+    display: none;
+}
+
+.info-tab-content.active {
+    display: block;
+}
+
+.tab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.text-side h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-pink);
+    margin-bottom: 20px;
+}
+
+.image-side img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 800px) {
+    .tab-grid { grid-template-columns: 1fr; }
+    .command-center-window { padding: 30px; top: 10%; transform: translate(-50%, 0); height: 80vh; overflow-y: auto;}
+    @keyframes windowSlideIn { from { opacity: 0; top: 20%;} to { opacity: 1; top: 10%;}}
+}
+body {
+    /* 1. Eliminamos espacios en blanco */
+    margin: 0;
+    padding: 0;
+    
+    /* 2. Cargamos la imagen de fondo */
+    background-image: url('/images/luna.jpg'); 
+    
+    /* 3. Ajuste perfecto a pantalla completa */
+    background-size: cover; /* Ajusta la imagen sin estirarla */
+    background-position: center; /* La centra siempre */
+    background-attachment: fixed; /* La imagen se queda quieta al hacer scroll */
+    background-repeat: no-repeat; /* No permite que se duplique */
+    
+    /* 4. Color de respaldo por si la imagen tarda en cargar */
+    background-color: #000; 
+    
+    /* 5. Aseguramos que ocupe todo el alto del navegador */
+    min-height: 100vh;
+}
