@@ -389,27 +389,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* Botón de regreso al inicio */
 .btn-back {
     display: inline-block;
-    margin: 20px;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, rgba(0, 242, 255, 0.2) 0%, rgba(255, 0, 255, 0.1) 100%);
-    border: 2px solid var(--electric-blue);
-    color: var(--electric-blue);
+    margin: 30px 20px;
+    padding: 16px 35px;
+    background: linear-gradient(135deg, var(--electric-blue) 0%, rgba(0, 242, 255, 0.8) 100%);
+    border: 3px solid var(--electric-blue);
+    color: #000;
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: 0.3s;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+    letter-spacing: 2px;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.8), 0 0 60px rgba(0, 242, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .btn-back:hover {
-    background: linear-gradient(135deg, rgba(0, 242, 255, 0.4) 0%, rgba(255, 0, 255, 0.2) 100%);
-    color: var(--neon-pink);
+    background: linear-gradient(135deg, var(--neon-pink) 0%, rgba(255, 0, 255, 0.8) 100%);
+    color: #fff;
     border-color: var(--neon-pink);
-    box-shadow: 0 0 20px var(--neon-pink);
-    transform: translateY(-3px);
+    box-shadow: 0 0 40px var(--neon-pink), 0 0 80px rgba(255, 0, 255, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px) scale(1.08);
 }
