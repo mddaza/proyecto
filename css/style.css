@@ -273,3 +273,143 @@ aside {
     border-radius: 5px;
     margin: 20px;
 }
+/* Centra el contenedor de las tablas */
+.contenedor-vertical {
+    display: flex;
+    flex-direction: column; /* Alinea las tablas una debajo de otra */
+    align-items: center;    /* Centra las tablas horizontalmente */
+    gap: 30px;              /* Espacio entre cada tripulante */
+    padding: 20px;
+}
+
+.tabla-vertical {
+    width: 100%;
+    max-width: 400px;       /* Controla el ancho para que no se estire demasiado */
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid var(--electric-blue);
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.tabla-vertical th, .tabla-vertical td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Columna de la izquierda (Encabezados) */
+.tabla-vertical th {
+    background-color: rgba(0, 242, 255, 0.1);
+    color: var(--electric-blue);
+    font-family: 'Orbitron', sans-serif;
+    text-align: left;
+    width: 40%;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* Columna de la derecha (Datos) */
+.tabla-vertical td {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    text-align: right; /* Alinea el texto a la derecha para contraste */
+}
+
+/* Quitar el borde de la última fila */
+.tabla-vertical tr:last-child th, 
+.tabla-vertical tr:last-child td {
+    border-bottom: none;
+}
+
+/* Título de sección centrado */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--neon-pink);
+    font-family: 'Orbitron', sans-serif;
+}
+/* Reutilizamos .contenedor-vertical y .tabla-vertical del código anterior */
+
+.formulario-espacial {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para los campos de entrada dentro de la tabla */
+.tabla-vertical input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    padding: 10px;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.tabla-vertical input:focus {
+    border-color: var(--electric-blue);
+    box-shadow: 0 0 10px var(--electric-blue);
+    background: rgba(0, 242, 255, 0.1);
+}
+
+/* Botón de registro estilo Artemis */
+.btn-registro {
+    background: var(--electric-blue);
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: 0.4s;
+    box-shadow: 0 0 15px var(--electric-blue);
+}
+
+.btn-registro:hover {
+    background: var(--neon-pink);
+    color: white;
+    box-shadow: 0 0 25px var(--neon-pink);
+    transform: scale(1.05);
+}
+
+/* Ajuste para que el calendario del input date sea visible */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Hace que el icono del calendario sea blanco */
+    cursor: pointer;
+}
+
+/* Botón de regreso al inicio */
+.btn-back {
+    display: inline-block;
+    margin: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, rgba(0, 242, 255, 0.2) 0%, rgba(255, 0, 255, 0.1) 100%);
+    border: 2px solid var(--electric-blue);
+    color: var(--electric-blue);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+}
+
+.btn-back:hover {
+    background: linear-gradient(135deg, rgba(0, 242, 255, 0.4) 0%, rgba(255, 0, 255, 0.2) 100%);
+    color: var(--neon-pink);
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 20px var(--neon-pink);
+    transform: translateY(-3px);
+}

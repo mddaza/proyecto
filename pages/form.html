@@ -8,20 +8,44 @@
      <link rel="stylesheet" href="/../css/style.css">
 </head>
 <body>
-    <h1>formulario</h1>
+    <div id="registro-mision" class="tab-content">
+    <h2 class="section-title">REGISTRO DE NUEVOS CADETES</h2>
     
-    <form action="/guardar-registro" method="POST">
-        <label for="usuario">Nombre de usuario:</label>
-        <input type="text" id="usuario" placeholder="Ej. jperez123">
-        <br>
-        <label for="clave">Contraseña:</label>
-        <input type="password" id="clave">
-        <br>
-        <label for="fecha_nacimiento">Fecha de nacimiento:</label> <input type="date" id="fecha_nacimiento">
-        <br>
-        <button type="submit">Registrarse en el sistema</button>
-    </form>
+    <div class="contenedor-vertical">
+        <form action="/guardar-registro" method="POST" class="formulario-espacial">
+            <table class="tabla-vertical">
+                <tr>
+                    <th><label for="usuario">NOMBRE DE USUARIO</label></th>
+                    <td>
+                        <input type="text" id="usuario" name="usuario" placeholder="Ej. Melany_Space">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th><label for="clave">CONTRASEÑA</label></th>
+                    <td>
+                        <input type="password" id="clave" name="clave" placeholder="••••••••">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th><label for="fecha_nacimiento">FECHA DE NACIMIENTO</label></th>
+                    <td>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" style="text-align: center; padding: 25px;">
+                        <button type="submit" class="btn-registro">REGISTRARSE EN EL SISTEMA</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
 
 
+<a href="../index.html" class="btn-back">← Volver al Inicio</a>
 </body>
 </html>
