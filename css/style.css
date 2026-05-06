@@ -413,3 +413,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     box-shadow: 0 0 40px var(--neon-pink), 0 0 80px rgba(255, 0, 255, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.3);
     transform: translateY(-5px) scale(1.08);
 }
+/* Animación de Temblor (Disparo) */
+.shake-animation {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    border-color: #ff375f !important;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Animación de Brillo (Curación) */
+.glow-animation {
+    animation: glow 0.5s ease-in-out;
+    border-color: #00ff88 !important;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #00ff88; }
+    50% { box-shadow: 0 0 30px #00ff88; }
+    100% { box-shadow: 0 0 5px #00ff88; }
+}

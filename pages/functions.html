@@ -7,42 +7,33 @@
 
  <link rel="stylesheet" href="/../css/style.css">
 
-    <script>
-        function mayor_edad(edad){
-            let mayor = false;
-            if(edad >=18)
-                mayor= true;
-            else
-                 mayor = false;
-                return mayor;
-            
-        }
-
-        function hello (name){
-             alert("hello wellcome to my webpag" + name)}
-
-        //Ejemplo con valor 15
-        console.log(mayor_edad(15));
+   <div id="sistema-funciones" class="tab-content active">
+    <h2 class="section-title">TERMINAL DE ACCESO: VERIFICACIÓN DE IDENTIDAD</h2>
     
-        //ejemplo con valor 18
-        console.log(mayor_edad(18));
-        
-        let name = prompt("dame tu nombre");
-        hello(name)
-
-        let age = prompt("dame tu edad");
-
-        if (mayor_edad(age)){
-        //mayor de edad permite ingreso 
-        alert("Bienvenido")
-
-        }else
-        {
-            //menor de endad restringe
-            alert("no puedes ingresar a la web");
-       }
-       
-    </script>
+    <div class="contenedor-vertical">
+        <table class="tabla-vertical">
+            <tr>
+                <th colspan="2" style="text-align: center; color: var(--electric-blue);">PROTOCOLO DE BIENVENIDA</th>
+            </tr>
+            <tr>
+                <th>NOMBRE DEL CADETE</th>
+                <td><input type="text" id="inputNombre" placeholder="Ingresa tu nombre..."></td>
+            </tr>
+            <tr>
+                <th>EDAD</th>
+                <td><input type="number" id="inputEdadAcceso" placeholder="Ingresa tu edad..."></td>
+            </tr>
+            <tr>
+                <th>ESTADO DE ACCESO</th>
+                <td id="statusAcceso" style="font-weight: bold; color: var(--neon-pink);">SISTEMA EN ESPERA...</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center; padding: 20px;">
+                    <button class="btn-registro" onclick="ejecutarAcceso()">INICIAR VERIFICACIÓN</button>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 </head>
 <body>

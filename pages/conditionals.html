@@ -8,33 +8,49 @@
 </head>
 <body>
 
-    <script>
+    <div id="simulador-condicionales" class="tab-content active">
+    <h2 class="section-title">SISTEMA DE VERIFICACIÓN LOGÍSTICA</h2>
+    
+    <div class="contenedor-vertical">
+        <table class="tabla-vertical">
+            <tr>
+                <th colspan="2" style="text-align: center; color: var(--neon-pink);">VERIFICADOR DE RANGO</th>
+            </tr>
+            <tr>
+                <th>ENTRADA DE EDAD</th>
+                <td><input type="number" id="inputEdad" placeholder="Ingresa edad..."></td>
+            </tr>
+            <tr>
+                <th>ESTADO</th>
+                <td id="resultadoEdad" style="color: var(--electric-blue); font-weight: bold;">Esperando datos...</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button class="btn-registro" onclick="verificarEdad()">PROCESAR EDAD</button>
+                </td>
+            </tr>
+        </table>
 
-        //prompt permite leer un valor desde le teclado
-   let edad = prompt("Diga su Edad")
-
-   if(edad >=18)
-     alert("Usted es MAYOR de edad");
-  else
-     alert("Usted es MENOR de edad")
-
-
-
-     //
-        let calificacion = prompt("introduzca su calificacion");
-
-        if (calificacion < 3.5)
-            alert("Desempeño BAJO");
-        else if (calificacion < 4)
-            alert("Desempeño BASICO");
-        else if (calificacion < 4.5)
-            alert("Desempeño ALTO");
-        else if (calificacion < 5)
-            alert("Desempeño SUPERIOR");
-        else
-            alert("La calificacion no es valida");
-
-    </script>
+        <table class="tabla-vertical">
+            <tr>
+                <th colspan="2" style="text-align: center; color: var(--neon-pink);">EVALUACIÓN DE DESEMPEÑO</th>
+            </tr>
+            <tr>
+                <th>CALIFICACIÓN</th>
+                <td><input type="number" step="0.1" id="inputNota" placeholder="0.0 - 5.0"></td>
+            </tr>
+            <tr>
+                <th>RESULTADO</th>
+                <td id="resultadoNota" style="color: var(--electric-blue); font-weight: bold;">Esperando nota...</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button class="btn-registro" onclick="verificarNota()">EVALUAR CADETE</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>    </script>
 <a href="../index.html" class="btn-back">← Volver al Inicio</a>
 </body>
 </html>
